@@ -3,16 +3,15 @@ const router = express.Router();
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
-const connectToDatabase = require('../models/db');
+const connectToDatabase = require('../db');
 const dotenv = require('dotenv');
-const pino = require('pino');
-const logger = pino();
+const logger = require('../logger');
 
 dotenv.config();
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-// Register
+// Register -> POST /api/auth/register
 router.post('/register', async (req, res) => {
     try {
         const db = await connectToDatabase();
@@ -51,7 +50,7 @@ router.post('/register', async (req, res) => {
     }
 });
 
-// Login
+// Login -> POST /api/auth/login
 router.post('/login', async (req, res) => {
     try {
         const db = await connectToDatabase();
@@ -61,7 +60,7 @@ router.post('/login', async (req, res) => {
         const theUser = await collection.findOne({ email: req.body.email });
 
         if (theUser) {
-            let result = await bcryptjs.compare(req.body.password, theUser.password);
+            const result = await bcryptjs.compare(req.body.password, theUser.password);
             if (!result) {
                 logger.error('Passwords do not match');
                 return res.status(404).json({ error: 'Wrong password' });
@@ -88,7 +87,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// Update user
+// Update user -> PUT /api/auth/update
 router.put('/update', async (req, res) => {
     try {
         const errors = validationResult(req);
@@ -106,7 +105,6 @@ router.put('/update', async (req, res) => {
         const db = await connectToDatabase();
         const collection = db.collection('users');
 
-        // Find the current user using findOne
         const existingUser = await collection.findOne({ email });
 
         if (!existingUser) {

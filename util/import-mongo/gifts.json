@@ -1,0 +1,18 @@
+[
+  { "id": "1", "name": "Bookshelf", "category": "Furniture", "condition": "Used", "age_days": 400, "age_years": 1.1, "description": "A wooden 5-shelf bookshelf, sturdy and in good condition.", "image": "" },
+  { "id": "2", "name": "Desk Lamp", "category": "Home Goods", "condition": "Used", "age_days": 200, "age_years": 0.5, "description": "Adjustable LED desk lamp with three brightness settings.", "image": "" },
+  { "id": "3", "name": "Toddler Bike", "category": "Kids", "condition": "Used", "age_days": 730, "age_years": 2.0, "description": "Balance bike for toddlers aged 2-4, minor scratches.", "image": "" },
+  { "id": "4", "name": "Winter Coat", "category": "Clothing", "condition": "Used", "age_days": 365, "age_years": 1.0, "description": "Men's medium winter coat, warm and water-resistant.", "image": "" },
+  { "id": "5", "name": "Coffee Table", "category": "Furniture", "condition": "Used", "age_days": 900, "age_years": 2.5, "description": "Glass-top coffee table with metal legs.", "image": "" },
+  { "id": "6", "name": "Blender", "category": "Kitchen", "condition": "Used", "age_days": 500, "age_years": 1.4, "description": "700W countertop blender, works perfectly.", "image": "" },
+  { "id": "7", "name": "Board Games Bundle", "category": "Toys", "condition": "Used", "age_days": 600, "age_years": 1.6, "description": "Bundle of 5 family board games, all pieces included.", "image": "" },
+  { "id": "8", "name": "Office Chair", "category": "Furniture", "condition": "Used", "age_days": 1000, "age_years": 2.7, "description": "Ergonomic office chair with lumbar support.", "image": "" },
+  { "id": "9", "name": "Yoga Mat", "category": "Sports", "condition": "New", "age_days": 30, "age_years": 0.1, "description": "Never used, still in original packaging.", "image": "" },
+  { "id": "10", "name": "Microwave", "category": "Kitchen", "condition": "Used", "age_days": 1200, "age_years": 3.3, "description": "Compact microwave, 700W, fully functional.", "image": "" },
+  { "id": "11", "name": "Kids Puzzle Set", "category": "Toys", "condition": "Used", "age_days": 300, "age_years": 0.8, "description": "Set of 3 wooden puzzles for ages 3-6.", "image": "" },
+  { "id": "12", "name": "Garden Tools Set", "category": "Outdoor", "condition": "Used", "age_days": 800, "age_years": 2.2, "description": "Basic gardening tools: trowel, shears, gloves.", "image": "" },
+  { "id": "13", "name": "Dining Chairs (Set of 4)", "category": "Furniture", "condition": "Used", "age_days": 1500, "age_years": 4.1, "description": "Set of 4 wooden dining chairs, minor wear.", "image": "" },
+  { "id": "14", "name": "Baby Stroller", "category": "Kids", "condition": "Used", "age_days": 450, "age_years": 1.2, "description": "Lightweight foldable stroller, good condition.", "image": "" },
+  { "id": "15", "name": "Bookcase Speaker Set", "category": "Electronics", "condition": "Used", "age_days": 250, "age_years": 0.7, "description": "Bookshelf speakers, great sound, minor cosmetic wear.", "image": "" },
+  { "id": "16", "name": "Area Rug", "category": "Home Goods", "condition": "Used", "age_days": 600, "age_years": 1.6, "description": "5x7 area rug, neutral color, no stains.", "image": "" }
+]

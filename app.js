@@ -1,8 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const pinoLogger = require('./logger');
-const connectToDatabase = require('./models/db');
+const logger = require('./logger');
+const connectToDatabase = require('./db');
 
 const giftRoutes = require('./routes/giftRoutes');
 const searchRoutes = require('./routes/searchRoutes');
@@ -12,25 +12,25 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
+// Connect to MongoDB on startup
 connectToDatabase()
     .then(() => {
-        pinoLogger.info('Connected to DB');
+        logger.info('Connected to DB');
     })
     .catch((e) => console.error('Failed to connect to DB', e));
+
+app.use((req, res, next) => {
+    logger.info(`Request: ${req.method} ${req.url}`);
+    next();
+});
 
 // Route middlewares
 app.use('/api/gifts', giftRoutes);
 app.use('/api/search', searchRoutes);
 app.use('/api/auth', authRoutes);
 
-app.use((req, res, next) => {
-    pinoLogger.info(`Request: ${req.method} ${req.url}`);
-    next();
-});
-
-app.get("/", (req, res) => {
-    res.send("Inside the server");
+app.get('/', (req, res) => {
+    res.send('Inside the server');
 });
 
 // Global error handler
