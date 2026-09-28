@@ -1,20 +1,36 @@
 # User Story
 
-**Title:** _As a [type of user], I want [an action] so that [a benefit/value]._
+**Title:** *As a registered user, I want to search for gifts by category, name, condition and age so that I can quickly find items that match my needs.*
 
 ## Description
-As a [type of user], I want to [perform some task] so that I can [achieve some goal/benefit/value].
+
+As a registered user, I want to search for gifts using filters so that I can find useful items without browsing the whole list.
 
 ## Acceptance Criteria
-1. [Criterion 1]
-2. [Criterion 2]
-3. [Criterion 3]
+
+**Scenario 1: Search by category**
+- **Given** I am on the GiftLink home page
+- **When** I select the category "Living" and submit the search
+- **Then** only gifts in the "Living" category are shown
+
+**Scenario 2: Search by name**
+- **Given** I am on the search page
+- **When** I enter "chair" in the name field
+- **Then** all gifts whose name contains "chair" (any case) are displayed
+
+**Scenario 3: No matching results**
+- **Given** I am on the search page
+- **When** I search for a name that matches no gift
+- **Then** an empty result list is shown
 
 ## Priority
-[High/Medium/Low]
+
+High
 
 ## Story Points
-[Estimate]
+
+3
 
 ## Notes
-[Any additional information or clarifications]
+
+Backed by `GET /api/search` with the optional query params `category`, `condition`, `name` and `age_years`.

@@ -1,1 +1,2 @@
-curl "http://localhost:3060/api/search?category=Furniture"
+curl "http://localhost:3060/api/search?name=chair&category=Furniture"
+[{"_id":"6ababfa7cb78d0acfa89ed98","id":"8","name":"Office Chair","category":"Furniture","condition":"Used","age_days":1000,"age_years":2.7,"description":"Ergonomic office chair with lumbar support.","image":""},{"_id":"6ababfa7cb78d0acfa89ed9d","id":"13","name":"Dining Chairs (Set of 4)","category":"Furniture","condition":"Used","age_days":1500,"age_years":4.1,"description":"Set of 4 wooden dining chairs, minor wear.","image":""}]

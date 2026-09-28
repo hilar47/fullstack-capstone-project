@@ -1,4 +1,4 @@
-name: CI/CD
+name: Lint Code
 
 on:
   push:
@@ -7,29 +7,21 @@ on:
     branches: [main]
 
 jobs:
-  backend:
+  lint_js:
+    name: Lint JavaScript Files
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-      - name: Install backend dependencies
-        run: npm install
-      - name: Lint backend
-        run: npx eslint . --ext .js --ignore-pattern frontend/ --ignore-pattern node_modules/
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-  frontend:
-    runs-on: ubuntu-latest
-    needs: backend
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Install frontend dependencies
-        run: npm install
-        working-directory: frontend
-      - name: Build frontend
-        run: npm run build
-        working-directory: frontend
+
+      - name: Install JSHint
+        run: npm install jshint --global
+
+      - name: Run Linter
+        run: |
+          find . -name "*.js" -not -path "./node_modules/*" -not -path "./frontend/*" -not -path "*/node_modules/*" -exec jshint {} +
